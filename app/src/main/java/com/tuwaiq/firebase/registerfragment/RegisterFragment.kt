@@ -64,6 +64,12 @@ class RegisterFragment : Fragment() {
                             if (task.isSuccessful){
                                 Log.d(TAG,"register successful")
 
+                                val updateProfile = userProfileChangeRequest {
+                                    displayName = username
+                                }
+
+                                auth.currentUser?.updateProfile(updateProfile)
+
                             }else{
                                 Log.d(TAG,"register unsuccessful")
                             }

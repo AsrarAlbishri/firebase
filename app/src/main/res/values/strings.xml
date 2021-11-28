@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">firebase</string>
+    <string name="username">username</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="register">register</string>
+</resources>

@@ -80,7 +80,7 @@ class RegisterFragment : Fragment() {
         }
     }
 
-    fun showToast(message:String){
+    private fun showToast(message:String){
         Toast.makeText(context,message,Toast.LENGTH_LONG).show()
     }
 

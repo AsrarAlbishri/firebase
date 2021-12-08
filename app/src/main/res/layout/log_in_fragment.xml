@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginfragment.LogInFragment">
+    android:orientation="vertical"
+    tools:context=".loginfragment.LogInFragment" >
 
-    <TextView
+    <EditText
+        android:id="@+id/log_in_email_et"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="@dimen/register_margin"
+        android:inputType="textPersonName"
+        android:hint="@string/e_mail" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/log_in_password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="@dimen/register_margin"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/log_in_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/register_margin"
+        android:text="Log in" />
+</LinearLayout>

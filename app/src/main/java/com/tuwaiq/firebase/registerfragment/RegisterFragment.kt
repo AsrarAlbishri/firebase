@@ -14,12 +14,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.tuwaiq.firebase.R
+import com.tuwaiq.firebase.loginfragment.LogInFragment
 
 private const val TAG = "password"
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var auth: FirebaseAuth
+    companion object {
+        var auth: FirebaseAuth = FirebaseAuth.getInstance()
+
+    }
 
     private lateinit var usernameET:EditText
     private lateinit var emailET:EditText
@@ -32,7 +36,7 @@ class RegisterFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = FirebaseAuth.getInstance()
+
 
 
     }
@@ -43,7 +47,13 @@ class RegisterFragment : Fragment() {
         val currentUser = auth.currentUser
 
         if (currentUser != null){
+            val fragment = LogInFragment()
 
+            activity?.supportFragmentManager?.let {
+                it.beginTransaction()
+                    .replace(R.id.fragmentContainerView,fragment)
+                    .commit()
+            }
         }
 
         registerBtn.setOnClickListener {
@@ -83,6 +93,7 @@ class RegisterFragment : Fragment() {
     private fun showToast(message:String){
         Toast.makeText(context,message,Toast.LENGTH_LONG).show()
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
